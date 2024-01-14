@@ -1,5 +1,4 @@
 import NavBar from "../components/Navbar/NavBar"
-import { Link } from 'react-router-dom';
 import equipmentImg from '../images/equipment.jpg';
 import certImg from '../images/iso-certificate-can2143.jpg';
 import thing1 from '../images/SlideShow/thing1.jpg';
@@ -15,12 +14,8 @@ import SlideShow from "../components/SlideShow";
 
 const About = () => {
     useDocTitle('HaseTooling | About Us')
-    const descriptionAbout = "We take great pride in our capabilities of offering our clients tools for automation, gauging, specialty tooling and small precision dies. \
-    We thrive to give our customers Excellent Service with fast turnaround times and a quality product at competitive pricing. The industries we are currently working for are the \
-    Automotive Sector, Customer Products, Stamping Companies as well as Automated Packaging and Bottling lines.";
-    
-    const descriptionCert = "We are proud to announce that Hase Tooling Specialties Inc has achieved ISO 9001:2015 certification, a globally recognized standard for Quality Management Systems.\
-    This certification reflects our unwavering commitment to delivering products/services of the highest quality and our dedication to continuous improvement.";
+    const descriptionAbout = "We take great pride in our capabilities of offering our clients tools for automation, gauging, specialty tooling and small precision dies. We thrive to give our customers Excellent Service with fast turnaround times and a quality product at competitive pricing. The industries we are currently working for are the Automotive Sector, Customer Products, Stamping Companies as well as Automated Packaging and Bottling lines.";
+    const descriptionCert = "We are proud to announce that Hase Tooling Specialties Inc has achieved ISO 9001:2015 certification, a globally recognized standard for Quality Management Systems. This certification reflects our unwavering commitment to delivering products/services of the highest quality and our dedication to continuous improvement.";
 
     const images = [thing1, thing2, thing3, thing4];
 

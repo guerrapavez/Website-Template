@@ -9,7 +9,6 @@ import colors from '../../utils/colors';
 const NavBar = () => {
     const [top, setTop] = useState(true);
     const [isOpen, setisOpen] = React.useState(false);
-    const isMobile = ( window.innerWidth <= 800 ) && ( window.innerHeight <= 600 );
     function handleClick() {
         setisOpen(!isOpen);
     }
