@@ -7,7 +7,7 @@ import axios from 'axios';
 import Notiflix from 'notiflix';
 
 const Contact = () => {
-    useDocTitle('MLD | Molad e Konsult - Send us a message')
+    useDocTitle('HaseTooling | Contact - Send us a message')
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
@@ -172,7 +172,7 @@ const Contact = () => {
                 </div>
                 </form>
                         <div
-                            className="w-full  lg:-mt-96 lg:w-2/6 px-8 py-6 ml-auto bg-blue-900 rounded-2xl">
+                            className="w-full  lg:-mt-96 lg:w-2/6 px-8 py-3 ml-auto bg-blue-900 rounded-2xl">
                             <div className="flex flex-col text-white">
                                 
                                 <div className="flex my-4 w-2/3 lg:w-3/4">
@@ -181,7 +181,8 @@ const Contact = () => {
                                     </div>
                                     <div className="flex flex-col">
                                         <h2 className="text-2xl">Office Address</h2>
-                                        <p className="text-gray-400">Ilo Awela, Ota, Ogun State</p>
+                                        <p className="text-gray-400">96 Centennial Road</p>
+                                        <p className="text-gray-400">Kitchener, ON N2B 3G1</p>
                                     </div>
                                 </div>
                     
@@ -192,7 +193,7 @@ const Contact = () => {
 
                         <div className="flex flex-col">
                         <h2 className="text-2xl">Call Us</h2>
-                        <p className="text-gray-400">Tel: 08055384406</p>
+                        <p className="text-gray-400">Tel: (519) 576-7018</p>
                         
                             <div className='mt-5'>
                                 <h2 className="text-2xl">Send an E-mail</h2>
