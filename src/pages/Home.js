@@ -11,15 +11,14 @@ import {useDocTitle} from '../components/CustomHook';
 const Home = () => {
     useDocTitle("HaseTooling | Specialized & Custom tooling | Waterloo");
     return (
-        <>
+        <div>
             <Hero />
             <Intro />
             <Services />
-            {/* <Portfolio /> */}
             <Clients />
             <Cta/>
             <Footer />
-        </>
+        </div>
 
     )
 }
