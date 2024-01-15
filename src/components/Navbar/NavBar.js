@@ -41,7 +41,7 @@ const NavBar = () => {
         <nav className={`fixed top-0 w-full z-30 transition duration-300 ease-in-out mb-20 ${!top && 'bg-white shadow-lg'}`}>
             <div className="flex flex-row items-center">
                 <Link to="/">
-                    <div className="flex items-center" style={{paddingTop: 2 , paddingBottom: 4}}>
+                    <div className="flex items-center ml-auto" style={{paddingTop: 2 , paddingBottom: 4}}>
                     <img alt="card img" className="rounded-t duration-1000" style={{maxWidth:'50%'}} src={isMobile ? smallHaseLogoImg : haseLogoImg} />
                     <img alt="card img" className="rounded-t duration-1000" style={{maxWidth:'50%'}} src={isMobile ? smallGrandRiverLogoImg : grandRiverLogoImg} />
                     </div>
