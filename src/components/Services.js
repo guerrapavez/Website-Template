@@ -12,7 +12,7 @@ const Services = () => {
     }
 
     return (
-        <div id="services" className="bg-gray-100 py-12" >
+        <div id="services" className="bg-gray-100" style={{paddingTop:5}} >
             <section data-aos="zoom-in-down">
                     <div className="my-4 py-4">
                         <h2 className="my-2 text-center text-3xl uppercase font-bold" style={{ color: colors.haseBlue }}>services</h2>

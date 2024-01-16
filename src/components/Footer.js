@@ -1,12 +1,25 @@
-import React from 'react';
 import colors from '../utils/colors';
 import {Link} from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import React, { useState, useEffect } from 'react';
 
 const Footer = () => {
+    const [width, setWidth] = useState(window.innerWidth);
+
+    function handleWindowSizeChange() {
+        setWidth(window.innerWidth);
+    }
+    useEffect(() => {
+        window.addEventListener('resize', handleWindowSizeChange);
+        return () => {
+            window.removeEventListener('resize', handleWindowSizeChange);
+        }
+    }, []);
+
+    const isMobile = width <= 768;
     return (
-        <>
-            <footer>
+        !isMobile && (
+            <footer style={{overflow:'hidden'}}>
                 <div className="footer max-w-full mx-auto px-4 sm:px-6 bg-blue border-t border-b py-30">
 
                     {/* Top area: Blocks */}
@@ -107,7 +120,7 @@ const Footer = () => {
                 </div>
                 
             </footer>
-        </>
+        )
     )
 }
 export default Footer;
