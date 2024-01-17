@@ -6,10 +6,9 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import { useState } from "react";
 
-const Services = () => {
-    useDocTitle('HaseTooling | Services')
+const Capabilities = () => {
+    useDocTitle('HaseTooling | Capabilities')
     const [key, setKey] = useState('drilling');
-
     return (
         <>
            <div className="hero" id='hero'>
@@ -19,7 +18,7 @@ const Services = () => {
                 <div className="flex flex-col py-8 text-center items-center">
                     <div data-aos="zoom-in" data-aos-delay="200">
                         <h1 style={{color: colors.haseBlue}}>
-                            Our Services
+                            Our Capabilities
                         </h1>
                         <Tabs
                         activeKey={key}
@@ -29,17 +28,23 @@ const Services = () => {
                         className="mb-3"
                         style={{color:colors.haseBlue}}
                         >
-                            <Tab eventKey="fixtures" title="Fixtures">
-                                Tab content for Fixtures
+                            <Tab eventKey="drilling" title="Drilling" style={{color:colors.haseBlue}}>
+                                Tab content for Drilling
                             </Tab>
-                            <Tab eventKey="gauges" title="Gauges">
-                                Tab content for Gauges
+                            <Tab eventKey="turning" title="Turning">
+                                Tab content for Turning
                             </Tab>
-                            <Tab eventKey="spare_parts" title="Spare Parts">
+                            <Tab eventKey="milling" title="Milling">
                                 Tab content for Milling
                             </Tab>
-                            <Tab eventKey="spm" title="SPM">
+                            <Tab eventKey="grinding" title="Grinding">
                                 Tab content for Grinding
+                            </Tab>
+                            <Tab eventKey="laser_engraving" title="Laser Engraving">
+                                Tab content for Laser Engraving
+                            </Tab>
+                            <Tab eventKey="saw_cutting" title="Saw Cutting">
+                                Tab content for Saw Cutting
                             </Tab>
                         </Tabs>
                     </div>
@@ -50,4 +55,4 @@ const Services = () => {
     )
 }
 
-export default Services;
+export default Capabilities;
