@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import NavBar from '../components/Navbar/NavBar';
 import Footer from '../components/Footer';
 import {useDocTitle} from '../components/CustomHook';
-import axios from 'axios';
-// import emailjs from 'emailjs-com';
+import '../utils/./emailjsConfig';
+import emailjs from 'emailjs-com';
 import Notiflix from 'notiflix';
 
 const Contact = () => {
@@ -27,53 +27,37 @@ const Contact = () => {
         setMessage('')
     }
 
-    const sendEmail = (e) => {
+    const sendEmail = async (e) => {
         e.preventDefault();
-        document.getElementById('submitBtn').disabled = true;
-        document.getElementById('submitBtn').innerHTML = 'Loading...';
-        let fData = new FormData();
-        fData.append('first_name', firstName)
-        fData.append('last_name', lastName)
-        fData.append('email', email)
-        fData.append('phone_number', phone)
-        fData.append('message', message)
 
-        axios({
-            method: "post",
-            url: process.env.REACT_APP_CONTACT_API,
-            data: fData,
-            headers: {
-                'Content-Type':  'multipart/form-data'
-            }
-        })
-        .then(function (response) {
+        // Configure your EmailJS service ID and template ID
+        const serviceID = 'service_dvx43k8';
+        const templateID = 'template_60z7qg4';
+
+        try {
+            const response = await emailjs.sendForm(serviceID, templateID, e.target);
+
+            // Handle success
             document.getElementById('submitBtn').disabled = false;
             document.getElementById('submitBtn').innerHTML = 'send message';
-            clearInput()
-            //handle success
+            clearInput();
             Notiflix.Report.success(
                 'Success',
-                response.data.message,
+                response.text,
                 'Okay',
             );
-        })
-        .catch(function (error) {
+        } catch (error) {
+            // Handle error
+            console.error('Error sending email:', error);
             document.getElementById('submitBtn').disabled = false;
             document.getElementById('submitBtn').innerHTML = 'send message';
-            //handle error
-            const { response } = error;
-            if(response.status === 500) {
-                Notiflix.Report.failure(
-                    'An error occurred',
-                    response.data.message,
-                    'Okay',
-                );
-            }
-            if(response.data.errors !== null) {
-                setErrors(response.data.errors)
-            }
-            
-        });
+
+            Notiflix.Report.failure(
+                'An error occurred',
+                error.text,
+                'Okay',
+            );
+        }
     }
     return (
         <>
@@ -92,7 +76,7 @@ const Contact = () => {
                         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 mt-5">
                                 <div>
                                     <input 
-                                        name="first_name" 
+                                        name="firstName" 
                                         className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                                         type="text" 
                                         placeholder="First Name*" 
@@ -107,7 +91,7 @@ const Contact = () => {
                                 
                                 <div>
                                     <input 
-                                        name="last_name" 
+                                        name="lastName" 
                                         className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                                         type="text" 
                                         placeholder="Last Name*"
@@ -137,7 +121,7 @@ const Contact = () => {
 
                                 <div>
                                     <input
-                                        name="phone_number" 
+                                        name="phone" 
                                         className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                                         type="number" 
                                         placeholder="Phone*"
