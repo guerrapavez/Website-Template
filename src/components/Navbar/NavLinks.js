@@ -24,7 +24,7 @@ const NavLinks = () => {
           <Dropdown.Item href="/capabilities">Laser Engraving</Dropdown.Item>
           <Dropdown.Item href="/capabilities">Saw Cutting</Dropdown.Item>
         </DropdownButton>
-        <Button style={{ margin:2, backgroundColor: colors.haseBlue , textDecoration: 'none'}} smooth to="/contact">
+        <Button style={{ margin:2, backgroundColor: colors.haseBlue , textDecoration: 'none'}} smooth href="/contact">
           Contact us
         </Button>
       </div>
