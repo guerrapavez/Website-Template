@@ -2,11 +2,24 @@ import Button from 'react-bootstrap/Button';
 import colors from '../../utils/colors';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const NavLinks = () => {
+    const [width, setWidth] = useState(window.innerWidth);
+
+      function handleWindowSizeChange() {
+          setWidth(window.innerWidth);
+      }
+      useEffect(() => {
+          window.addEventListener('resize', handleWindowSizeChange);
+          return () => {
+              window.removeEventListener('resize', handleWindowSizeChange);
+          }
+      }, []);
+      const isMobile = width <= 768;
+      
     return (
-      <div className="flex items-center">
+      <div className={`${isMobile ? 'flex-col' : 'flex'} items-center`}>
         <Button title='About' variant='light' style={{textDecoration:'none', fontStyle:'normal'}}href="/about">
          About
         </Button>

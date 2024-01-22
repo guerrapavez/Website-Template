@@ -65,7 +65,7 @@ const Contact = () => {
                 <NavBar />
             </div>
             <div className="flex justify-center items-center mt-8 w-full bg-white py-12 lg:py-24 bg-gray-200">
-                <div className="container mx-auto my-8 px-4 lg:px-20" data-aos="zoom-in">
+                <div className="container mx-auto my-8 px-4 lg:px-20" style={{verticalAlign:'middle'}} data-aos="zoom-in">
 
                 <form onSubmit={sendEmail}>
 
@@ -156,10 +156,9 @@ const Contact = () => {
                 </div>
                 </form>
                         <div
-                            className="w-full  lg:-mt-96 lg:w-2/6 px-8 py-3 ml-auto bg-blue-900 rounded-2xl">
-                            <div className="flex flex-col text-white">
-                                
-                                <div className="flex my-4 w-2/3 lg:w-3/4">
+                             className="w-full lg:-mt-96 lg:w-2/6 px-8 py-3 ml-auto bg-blue-900 rounded-2xl" style={{height:'75%'}}>
+                            <div className="flex flex-col text-white"> 
+                                <div className="flex my-2 w-2/3 lg:w-3/4">
                                     <div className="flex flex-col">
                                         <i className="fas fa-map-marker-alt pt-2 pr-2" />
                                     </div>
