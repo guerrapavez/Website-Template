@@ -65,13 +65,13 @@ const About = () => {
                                         </ul>
                                     </div>
                                 </div>
-                                <Carousel fade>
+                                <Carousel fade style={{width: isMobile ? '100%' : 900} }>
                                     {images.map((image, index) => (
-                                        <Carousel.Item key={index}>
+                                        <Carousel.Item key={index} >
                                             <img
                                                 src={image}
                                                 alt={`Slide ${index}`}
-                                                style={{ maxWidth: 900, width: '100%', height: 'auto'}}
+                                                style={{ maxWidth: 900, width: !isMobile ? 900 : '100%'}}
                                                 className="rounded-lg"
                                             />
                                         </Carousel.Item>
